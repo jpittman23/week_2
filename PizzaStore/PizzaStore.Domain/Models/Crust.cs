@@ -2,29 +2,26 @@ namespace PizzaStore.Domain.Models
 {
     public class Crust
     {
-        public string _crust(string c)
+        public string _crust;
+        public Crust(string curst)
         {
             int choice;
-            int.TryParse(c, out choice);
-
+            int.TryParse(curst, out choice);
             if(choice == 1)
             {
-                var crust = "regular";
-                return crust;
+                _crust = "regular crust";
             }
             else if(choice == 2)
             {
-                var crust = "stuffed";
-                return crust;
+                _crust = "stuffed crust";
             }
             else if(choice == 3)
             {
-                var crust = "Thin";
-                return crust;
+                _crust = "thin crust";
             }
             else
             {
-                return "Please make a valid selection";
+                System.Console.WriteLine("Please make a valid selection");
             }
         }
     }

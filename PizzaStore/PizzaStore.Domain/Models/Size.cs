@@ -2,29 +2,26 @@ namespace PizzaStore.Domain.Models
 {
     public class Size
     {
-        public string _size(string s)
+        public string _size;
+        public Size(string size)
         {
             int choice;
-            int.TryParse(s, out choice);
-
+            int.TryParse(size, out choice);
             if (choice == 1)
             {
-                var size = "small";
-                return size;
+                _size = "Small";
             }
             else if (choice == 2)
             {
-                var size = "medium";
-                return size;
+                _size = "Medium";
             }
             else if (choice == 3)
             {
-                var size = "large";
-                return size;
+                _size = "Large";
             }
             else
             {
-                return "Please make a valid selection";
+                System.Console.WriteLine("Please make a valid selection");
             }
         }
     }

@@ -5,12 +5,17 @@ namespace PizzaStore.Domain.Models
 {
     public class Order
     {
-        public List<Pizza> Pizzas { get; set; }
+        public List<Pizza> Pizzalist { get; }
         public DateTime DateOrdered { get; set; }
 
-        public void CreatePizza()
+        public void CreatePizza(Size s, Crust c, List<Toppings> t)
         {
-            Pizzas.Add(new Pizza());
+            var pizza = new Pizza(c,s,t);
+            Pizzalist.Add(pizza);
+        }
+        public Order()
+        {
+            Pizzalist = new List<Pizza>();
         }
     }
 }
